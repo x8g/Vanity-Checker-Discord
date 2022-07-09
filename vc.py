@@ -23,24 +23,24 @@ os.system(f'title Vanity Checker ^| Threads: ' + threads)
 proxysused = 0
 proxyss = []
 def proxys():
-    global proxyss
-    threading.Timer(1.05, proxys).start()
-    proxyss = random.choice(prox)
+    lol = random.choice(prox)
+    
 # ---
 def check():
     global proxysused
+    global proxys
     while True:
-        r = requests.get("https://discord.com/api/v9/invites/" + vanity)
-        if r.status_code == 200:
+        r = requests.get(f"https://discord.com/api/v9/invites/{vanity}")
+        if 'vanity_url_code' in (r.text):
             proxysused +=1
             print(Fore.RED + "invite link taken: " + vanity + " | Proxys Used: " +str(proxysused))
-            os.system(f'title checking: ' + vanity + ' | Status: taken' + ' ^| github/x8g')
-        if r.status_code == 401:
+            os.system(f'title checking: ' + vanity + ' ^| Status: taken' + ' ^| github/x8g')
+        if 'Unknown Invite' in (r.text):
             proxysused +=1
             print(Fore.GREEN + "invite link claimable or termed: "+ vanity + " | Proxys Used: " +str(proxysused))
-            os.system(f'title checking: ' + vanity + ' | Status: avail/termed' + ' ^| github/x8g')
-        if r.status_code == 404:
-            print(Fore.RED + "Rate limited!")
+            os.system(f'title checking: ' + vanity + ' ^| Status: avail/termed' + ' ^| github/x8g')
+        if 'retry_after' in (r.text):
+            print(Fore.RED + f"Rate limited please wait.")
 while True:
         if threading.active_count() < int(threads):
             threading.Thread(target=check).start()
