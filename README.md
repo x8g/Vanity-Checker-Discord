@@ -12,3 +12,9 @@
 ```js
 zt (github/x8g)
 ```
+# Fixes
+```js
+* fixed rate limit status code
+* fixed more things with checking
+* fixed proxy usage LOL
+```
