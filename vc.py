@@ -4,14 +4,12 @@
 
 import requests, os, threading, random
 from colorama import Fore
-zt = Fore.MAGENTA
-# ---
-vanity = input(f"{zt}what vanity do you want to check?: ")
-threads = input(f"{zt}Threads?: ")
-# ---
+
+
+vanity = input(f"What vanity do you want to check?: ")
+threads = input(f"Threads?: ")
 os.system(f'title Vanity Checker ^| Threads: ' + threads)
 reqsent = 0
-url = f'https://discord.com/api/v9/invites/{vanity}'
 
     
 
@@ -19,7 +17,7 @@ url = f'https://discord.com/api/v9/invites/{vanity}'
 def check():
     global reqsent
     while True:
-        r = requests.get(url)
+        r = requests.get(f'https://discord.com/api/v9/invites/{vanity}')
         if 'vanity_url_code' in (r.text):
             reqsent +=1
             print(Fore.RED + "invite link taken: " + vanity + " | Requests Sent: " +str(reqsent))
@@ -28,6 +26,8 @@ def check():
             reqsent +=1
             print(Fore.GREEN + "invite link claimable or termed: "+ vanity + " | Requests Sent: " +str(reqsent))
             os.system(f'title checking: ' + vanity + ' ^| Status: avail/termed' + ' ^| github/x8g')
+        if 'Error 1015' in (r.text):
+            print(Fore.RED + f"Rate limited please wait")
         if 'retry_after' in (r.text):
             print(Fore.RED + f"Rate limited please wait.")
 while True:
