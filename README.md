@@ -1,11 +1,11 @@
 # Vanity Checker
 ```js
-* simple proxied vanity checker for discord!
+* simple non-proxied vanity checker for discord!
  ```
 # Features
 ```js
 * fast
-* proxied
+* accurate
 * threading
 ```
 # Credits
@@ -16,7 +16,7 @@ zt (github/x8g)
 ```js
 * fixed rate limit status code
 * fixed more things with checking
-* fixed proxy usage LOL
+* fixed whole source code and made things look cleaner
 ```
 # Support
 ```js
