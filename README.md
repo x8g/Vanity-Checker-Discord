@@ -18,3 +18,8 @@ zt (github/x8g)
 * fixed more things with checking
 * fixed proxy usage LOL
 ```
+# Support
+```js
+* .gg/soil
+* zt#7380
+* ```
