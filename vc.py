@@ -27,7 +27,7 @@ def check():
             print(Fore.GREEN + "invite link claimable or termed: "+ vanity + " | Requests Sent: " +str(reqsent))
             os.system(f'title checking: ' + vanity + ' ^| Status: avail/termed' + ' ^| github/x8g')
         if 'Access denied' in (r.text):
-            print(Fore.RED + f"Rate limited please wait")
+            print(Fore.RED + f"Cloudfare has blocked this IP.")
         if 'retry_after' in (r.text):
             print(Fore.RED + f"Rate limited please wait.")
 while True:
