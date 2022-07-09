@@ -40,7 +40,7 @@ def check():
             proxysused +=1
             print(Fore.GREEN + "invite link claimable or termed: "+ vanity + " | Proxys Used: " +str(proxysused))
             os.system(f'title checking: ' + vanity + ' | Status: avail/termed' + ' ^| github/x8g')
-        else:
+        if r.status_code == 404:
             print(Fore.RED + "Rate limited!")
 while True:
         if threading.active_count() < int(threads):
