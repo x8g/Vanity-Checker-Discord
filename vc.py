@@ -18,7 +18,6 @@ def check():
     global reqsent
     while True:
         r = requests.get(f'https://discord.com/api/v9/invites/{vanity}')
-        print(r.text)
         if 'vanity_url_code' in (r.text):
             reqsent +=1
             print(Fore.RED + "invite link taken: " + vanity + " | Requests Sent: " +str(reqsent))
