@@ -1,7 +1,7 @@
 # Vanity Checker
 ```js
-* simple non-proxied vanity checker for discord!
- ```
+* simple proxied-ish vanity checker for discord!
+```
 # Features
 ```js
 * fast
