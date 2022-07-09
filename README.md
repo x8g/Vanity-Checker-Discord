@@ -1,6 +1,7 @@
 # Vanity Checker
 ```js
 * simple non-proxied vanity checker for discord!
+* ADD PROXIE USAGE OR VPN CONSTANTLY.
  ```
 # Features
 ```js
