@@ -4,7 +4,6 @@
 
 import requests, os, threading, random
 from colorama import Fore
-
 proxs = {
   "600",
   "700",
@@ -12,17 +11,17 @@ proxs = {
   "900",
   "1000",
 }
-
+zt = Fore.MAGENTA
 # ---
-vanity = input(Fore.MAGENTA + "what vanity do you want to check?: ")
-threads = input(Fore.MAGENTA + "Threads?: ")
-proxytype = input(Fore.MAGENTA + "Proxy Type?: ")
+vanity = input(f"{zt}what vanity do you want to check?: ")
+threads = input(f"{zt}Threads?: ")
+proxytype = input(f"{zt}Proxy Type?: ")
 # ---
 prox = requests.get(f"https://api.proxyscrape.com/v2/?request=getproxies&protocol={proxytype}&timeout={random.choice(list(proxs))}&country=all").text.splitlines()
 # ---
 os.system(f'title Vanity Checker ^| Threads: ' + threads)
 proxysused = 0
-proxyss = [ ]
+proxyss = []
 def proxys():
     global proxyss
     threading.Timer(1.05, proxys).start()
